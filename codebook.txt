@@ -1,0 +1,82 @@
+#######################################################################################################################
+
+Code book : description of the variables from the text file "avgMeasures.txt" created by the code of "run_analysis.R" file
+
+#######################################################################################################################
+
+The data was extract, transform and load from "Human Activity Recognition Using Smartphones Data Set Version 1.0" research. The source is :
+
+Jorge L. Reyes-Ortiz, Davide Anguita, Alessandro Ghio, Luca Oneto.
+Smartlab - Non Linear Complex Systems Laboratory
+DITEN - Università degli Studi di Genova.
+Via Opera Pia 11A, I-16145, Genoa, Italy.
+activityrecognition@smartlab.ws
+www.smartlab.ws
+
+----------------------------------------------------------------------------------------------------------------------
+The "avgMeasures.txt" file goal was to make a tidy data set with explicit variables names and no intermediate variables or data sets.
+In that sense the "avgMeasures.txt" variables are : 
+
+[1]  "feature"
+      Features measurements names which come from the original core features names but without any triaxial specicifaction if applied,
+      17 possibilities :
+                        tBodyAcc
+                        tGravityAcc
+                        tBodyAccJerk
+                        tBodyGyro
+                        tBodyGyroJerk
+                        tBodyAccMag
+                        tGravityAccMag
+                        tBodyAccJerkMag
+                        tBodyGyroMag
+                        tBodyGyroJerkMag
+                        fBodyAcc
+                        fBodyAccJerk
+                        fBodyGyro
+                        fBodyAccMag
+                        fBodyAccJerkMag
+                        fBodyGyroMag
+                        fBodyGyroJerkMag
+
+[2]  "estimateparameter"
+      Axies specification from triaxial measurement for some concerned "feature". "feature" where axial measurement is out-of-context are fill with NAs values,
+      4 possibilities :
+                        X
+                        Y
+                        Z
+                        NA
+                              
+[3]  "estimate"
+      Mean and standard deviation of Samsung signals calculations made for each "feature" which come from the original source,
+      2 possibilities :
+                        mean()
+                        std()
+                        
+[4]  "activity"
+      Activity name perfomed by subject during "feature" measurements which come from the original source,
+      6 possibilities :
+                        WALKING
+                        WALKING_UPSTAIRS
+                        WALKING_DOWNSTAIRS
+                        SITTING
+                        STANDING
+                        LAYING
+                        
+[5]  "subjectid"
+      Number id for each of the 30 subject which come from the original source,
+      30 possibilities :
+                        from 1 to 30 //not displayed since it's obsious and will waste space
+
+[6]  "mean(value)"
+      Average value of each "feature" for either each triaxial measurement or none triaxial specification, each "activity" and each "subjectid",
+      11 880 observations :
+                            8 triaxial features
+                          * 3 axes
+                          + (17-8) none-axial features
+                          ____________________________
+                            33 features
+                          * 2 estimates
+                          * 6 activities
+                          * 30 subject
+                          ____________________________
+                            11 880 observations
